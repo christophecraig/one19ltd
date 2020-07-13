@@ -1,0 +1,110 @@
+2020-07-12T12:53:51+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_subtotal() on null in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php:77
+Stack trace:
+#0 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php(120): storefront_cart_link()
+#1 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(287): storefront_header_cart('')
+#2 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 /Users/christophe/Projects/one19ltd/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#4 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/header.php(48): do_action('storefront_head...')
+#5 /Users/christophe/Projects/one19ltd/wp-includes/template.php(723): require_once('/Users/christop...')
+#6 /Users/christophe/Projects/one19ltd/wp-includes/template.php(672): load_template('/Users/christop...', true)
+#7 /Users in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php on line 77
+
+2020-07-12T12:54:04+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_subtotal() on null in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php:77
+Stack trace:
+#0 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php(120): storefront_cart_link()
+#1 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(287): storefront_header_cart('')
+#2 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 /Users/christophe/Projects/one19ltd/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#4 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/header.php(48): do_action('storefront_head...')
+#5 /Users/christophe/Projects/one19ltd/wp-includes/template.php(723): require_once('/Users/christop...')
+#6 /Users/christophe/Projects/one19ltd/wp-includes/template.php(672): load_template('/Users/christop...', true)
+#7 /Users in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php on line 77
+
+2020-07-12T12:54:12+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_subtotal() on null in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php:77
+Stack trace:
+#0 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php(120): storefront_cart_link()
+#1 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(287): storefront_header_cart('')
+#2 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 /Users/christophe/Projects/one19ltd/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#4 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/header.php(48): do_action('storefront_head...')
+#5 /Users/christophe/Projects/one19ltd/wp-includes/template.php(723): require_once('/Users/christop...')
+#6 /Users/christophe/Projects/one19ltd/wp-includes/template.php(672): load_template('/Users/christop...', true)
+#7 /Users in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php on line 77
+
+2020-07-12T12:57:07+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_subtotal() on null in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php:77
+Stack trace:
+#0 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php(120): storefront_cart_link()
+#1 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(287): storefront_header_cart('')
+#2 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 /Users/christophe/Projects/one19ltd/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#4 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/header.php(48): do_action('storefront_head...')
+#5 /Users/christophe/Projects/one19ltd/wp-includes/template.php(723): require_once('/Users/christop...')
+#6 /Users/christophe/Projects/one19ltd/wp-includes/template.php(672): load_template('/Users/christop...', true)
+#7 /Users in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php on line 77
+
+2020-07-12T13:41:52+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_subtotal() on null in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php:77
+Stack trace:
+#0 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php(120): storefront_cart_link()
+#1 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(287): storefront_header_cart('')
+#2 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 /Users/christophe/Projects/one19ltd/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#4 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/header.php(48): do_action('storefront_head...')
+#5 /Users/christophe/Projects/one19ltd/wp-includes/template.php(723): require_once('/Users/christop...')
+#6 /Users/christophe/Projects/one19ltd/wp-includes/template.php(672): load_template('/Users/christop...', true)
+#7 /Users in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php on line 77
+
+2020-07-12T13:42:00+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_subtotal() on null in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php:77
+Stack trace:
+#0 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php(120): storefront_cart_link()
+#1 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(287): storefront_header_cart('')
+#2 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 /Users/christophe/Projects/one19ltd/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#4 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/header.php(48): do_action('storefront_head...')
+#5 /Users/christophe/Projects/one19ltd/wp-includes/template.php(723): require_once('/Users/christop...')
+#6 /Users/christophe/Projects/one19ltd/wp-includes/template.php(672): load_template('/Users/christop...', true)
+#7 /Users in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php on line 77
+
+2020-07-12T13:55:52+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_subtotal() on null in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php:77
+Stack trace:
+#0 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php(120): storefront_cart_link()
+#1 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(287): storefront_header_cart('')
+#2 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 /Users/christophe/Projects/one19ltd/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#4 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/header.php(48): do_action('storefront_head...')
+#5 /Users/christophe/Projects/one19ltd/wp-includes/template.php(723): require_once('/Users/christop...')
+#6 /Users/christophe/Projects/one19ltd/wp-includes/template.php(672): load_template('/Users/christop...', true)
+#7 /Users in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php on line 77
+
+2020-07-12T13:55:56+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_subtotal() on null in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php:77
+Stack trace:
+#0 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php(120): storefront_cart_link()
+#1 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(287): storefront_header_cart('')
+#2 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 /Users/christophe/Projects/one19ltd/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#4 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/header.php(48): do_action('storefront_head...')
+#5 /Users/christophe/Projects/one19ltd/wp-includes/template.php(723): require_once('/Users/christop...')
+#6 /Users/christophe/Projects/one19ltd/wp-includes/template.php(672): load_template('/Users/christop...', true)
+#7 /Users in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php on line 77
+
+2020-07-12T13:56:19+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_subtotal() on null in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php:77
+Stack trace:
+#0 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php(120): storefront_cart_link()
+#1 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(287): storefront_header_cart('')
+#2 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 /Users/christophe/Projects/one19ltd/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#4 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/header.php(48): do_action('storefront_head...')
+#5 /Users/christophe/Projects/one19ltd/wp-includes/template.php(723): require_once('/Users/christop...')
+#6 /Users/christophe/Projects/one19ltd/wp-includes/template.php(672): load_template('/Users/christop...', true)
+#7 /Users in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php on line 77
+
+2020-07-12T13:56:27+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_subtotal() on null in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php:77
+Stack trace:
+#0 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php(120): storefront_cart_link()
+#1 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(287): storefront_header_cart('')
+#2 /Users/christophe/Projects/one19ltd/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#3 /Users/christophe/Projects/one19ltd/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#4 /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/header.php(48): do_action('storefront_head...')
+#5 /Users/christophe/Projects/one19ltd/wp-includes/template.php(723): require_once('/Users/christop...')
+#6 /Users/christophe/Projects/one19ltd/wp-includes/template.php(672): load_template('/Users/christop...', true)
+#7 /Users in /Users/christophe/Projects/one19ltd/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php on line 77
+
