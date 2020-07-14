@@ -18,7 +18,6 @@ use WPGraphQL\Data\Connection\UserRoleConnectionResolver;
 use WPGraphQL\Model\Avatar;
 use WPGraphQL\Model\Comment;
 use WPGraphQL\Model\CommentAuthor;
-use WPGraphQL\Model\Menu;
 use WPGraphQL\Model\Plugin;
 use WPGraphQL\Model\Post;
 use WPGraphQL\Model\PostType;
@@ -602,12 +601,7 @@ class DataSource {
 
 			switch ( true ) {
 				case $node instanceof Post:
-					if ( $node->isRevision ) {
-						$parent_post_type = get_post( $node->parentDatabaseId )->post_type;
-						$type             = get_post_type_object( $parent_post_type )->graphql_single_name;
-					} else {
-						$type = get_post_type_object( $node->post_type )->graphql_single_name;
-					}
+					$type = get_post_type_object( $node->post_type )->graphql_single_name;
 					break;
 				case $node instanceof Term:
 					$type = get_taxonomy( $node->taxonomyName )->graphql_single_name;
@@ -720,6 +714,21 @@ class DataSource {
 		} else {
 			throw new UserError( sprintf( __( 'The global ID isn\'t recognized ID: %s', 'wp-graphql' ), $global_id ) );
 		}
+	}
+
+	/**
+	 * This was used for caching the get_page_by_path function, which is now cached in core,
+	 * please use that function directly instead.
+	 *
+	 * @param string $uri
+	 * @param string $output    Optional. Output type; OBJECT*, ARRAY_N, or ARRAY_A.
+	 * @param string $post_type Optional. Post type; default is 'post'.
+	 *
+	 * @return \WP_Post|null WP_Post on success or null on failure
+	 * @deprecated since 0.8.4 Use the get_page_by_path function instead.
+	 */
+	public static function get_post_object_by_uri( $uri, $output = OBJECT, $post_type = 'post' ) {
+		return get_page_by_path( $uri, $output, $post_type );
 	}
 
 	/**

@@ -208,9 +208,8 @@ class InstrumentSchema {
 						 * @param string          $type_name The name of the type the fields belong to
 						 * @param string          $field_key The name of the field
 						 * @param FieldDefinition $field     The Field Definition for the resolving field
-						 * @param mixed           $result    The result of the field resolver
 						 */
-						do_action( 'graphql_after_resolve_field', $source, $args, $context, $info, $field_resolver, $type_name, $field_key, $field, $result );
+						do_action( 'graphql_after_resolve_field', $source, $args, $context, $info, $field_resolver, $type_name, $field_key, $field );
 
 						return $result;
 

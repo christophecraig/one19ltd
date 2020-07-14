@@ -3,7 +3,6 @@
 namespace WPGraphQL\Data\Loader;
 
 use GraphQL\Deferred;
-use WPGraphQL\Model\MenuItem;
 use WPGraphQL\Model\Post;
 
 /**
@@ -150,11 +149,6 @@ class PostObjectLoader extends AbstractDataLoader {
 				 */
 				$loaded_posts[ $key ] = $load_dependencies->then(
 					function() use ( $post_object ) {
-
-						if ( 'nav_menu_item' === $post_object->post_type ) {
-							return new MenuItem( $post_object );
-						}
-
 						$post = new Post( $post_object );
 						if ( ! isset( $post->fields ) || empty( $post->fields ) ) {
 							return null;

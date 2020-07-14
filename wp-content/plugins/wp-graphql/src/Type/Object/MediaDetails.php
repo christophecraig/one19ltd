@@ -44,7 +44,6 @@ class MediaDetails {
 							return ! empty( $media_details['image_meta'] ) ? $media_details['image_meta'] : null;
 						},
 					],
-
 				],
 			]
 		);

@@ -40,7 +40,7 @@ class MediaItemMeta {
 						'type' => 'String',
 					],
 					'focalLength'      => [
-						'type'    => 'Float',
+						'type'    => 'Int',
 						'resolve' => function( $meta, $args, $context, $info ) {
 							return ! empty( $meta['focal_length'] ) ? $meta['focal_length'] : null;
 						},

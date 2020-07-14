@@ -2,11 +2,8 @@
 
 namespace WPGraphQL\Connection;
 
-use GraphQL\Type\Definition\ResolveInfo;
-use WPGraphQL\AppContext;
 use WPGraphQL\Data\Connection\MenuItemConnectionResolver;
-use WPGraphQL\Model\Menu;
-use WPGraphQL\Model\MenuItem;
+use WPGraphQL\Data\DataSource;
 
 /**
  * Class MenuItems
@@ -36,13 +33,6 @@ class MenuItems {
 				[
 					'fromType'      => 'MenuItem',
 					'fromFieldName' => 'childItems',
-					'resolve'       => function( MenuItem $menu_item, $args, AppContext $context, ResolveInfo $info ) {
-						$resolver = new MenuItemConnectionResolver( $menu_item, $args, $context, $info );
-						$resolver->set_query_arg( 'meta_key', '_menu_item_menu_item_parent' );
-						$resolver->set_query_arg( 'meta_value', (int) $menu_item->databaseId );
-						return $resolver->get_connection();
-
-					},
 				]
 			)
 		);
@@ -54,22 +44,6 @@ class MenuItems {
 			self::get_connection_config(
 				[
 					'fromType' => 'Menu',
-					'toType'   => 'MenuItem',
-					'resolve'  => function( Menu $menu, $args, AppContext $context, ResolveInfo $info ) {
-
-						$resolver = new MenuItemConnectionResolver( $menu, $args, $context, $info );
-						$resolver->set_query_arg( 'tax_query', [
-							[
-								'taxonomy'         => 'nav_menu',
-								'field'            => 'term_id',
-								'terms'            => (int) $menu->menuId,
-								'include_children' => false,
-								'operator'         => 'IN',
-							],
-						] );
-
-						return $resolver->get_connection();
-					},
 				]
 			)
 		);
@@ -90,19 +64,11 @@ class MenuItems {
 				'fromFieldName'  => 'menuItems',
 				'toType'         => 'MenuItem',
 				'connectionArgs' => [
-					'id'               => [
+					'id'       => [
 						'type'        => 'Int',
 						'description' => __( 'The ID of the object', 'wp-graphql' ),
 					],
-					'parentId'         => [
-						'type'        => 'ID',
-						'description' => __( 'The ID of the parent menu object', 'wp-graphql' ),
-					],
-					'parentDatabaseId' => [
-						'type'        => 'Int',
-						'description' => __( 'The database ID of the parent menu object', 'wp-graphql' ),
-					],
-					'location'         => [
+					'location' => [
 						'type'        => 'MenuLocationEnum',
 						'description' => __( 'The menu location for the menu being queried', 'wp-graphql' ),
 					],

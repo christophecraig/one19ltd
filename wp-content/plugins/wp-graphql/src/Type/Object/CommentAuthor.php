@@ -8,7 +8,7 @@ class CommentAuthor {
 			'CommentAuthor',
 			[
 				'description' => __( 'A Comment Author object', 'wp-graphql' ),
-				'interfaces'  => [ 'Node', 'Commenter' ],
+				'interfaces'  => [ 'Node' ],
 				'fields'      => [
 					'id'           => [
 						'description' => __( 'The globally unique identifier for the comment author object', 'wp-graphql' ),
