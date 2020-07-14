@@ -1,0 +1,17 @@
+2020-07-14T03:56:18+00:00 CRITICAL Uncaught Twig\Error\SyntaxError: A template that extends another one cannot include content outside Twig blocks. Did you forget to put the content inside a {% block %} tag? in /Users/christophe/Projects/one19ltd/wp-content/themes/starter-theme/templates/page-home.twig:1
+Stack trace:
+#0 /Users/christophe/Projects/one19ltd/wp-content/plugins/timber-library/vendor/twig/twig/src/Parser.php(430): Twig\Parser->filterBodyNodes(Object(Twig\Node\TextNode))
+#1 /Users/christophe/Projects/one19ltd/wp-content/plugins/timber-library/vendor/twig/twig/src/Parser.php(124): Twig\Parser->filterBodyNodes(Object(Twig\Node\Node))
+#2 /Users/christophe/Projects/one19ltd/wp-content/plugins/timber-library/vendor/twig/twig/src/Environment.php(735): Twig\Parser->parse(Object(Twig\TokenStream))
+#3 /Users/christophe/Projects/one19ltd/wp-content/plugins/timber-library/vendor/twig/twig/src/Environment.php(793): Twig\Environment->parse(Object(Twig\TokenStream))
+#4 /Users/christophe/Projects/one19ltd/wp-content/plugins/timber-library/vendor/t in /Users/christophe/Projects/one19ltd/wp-content/themes/starter-theme/templates/page-home.twig on line 1
+
+2020-07-14T08:21:15+00:00 CRITICAL Uncaught Twig\Error\SyntaxError: Unknown "dump" function. in /Users/christophe/Projects/one19ltd/wp-content/themes/starter-theme/templates/page-home.twig:4
+Stack trace:
+#0 /Users/christophe/Projects/one19ltd/wp-content/plugins/timber-library/vendor/twig/twig/src/ExpressionParser.php(461): Twig\ExpressionParser->getFunctionNodeClass('dump', 4)
+#1 /Users/christophe/Projects/one19ltd/wp-content/plugins/timber-library/vendor/twig/twig/src/ExpressionParser.php(243): Twig\ExpressionParser->getFunctionNode('dump', 4)
+#2 /Users/christophe/Projects/one19ltd/wp-content/plugins/timber-library/vendor/twig/twig/src/ExpressionParser.php(183): Twig\ExpressionParser->parsePrimaryExpression()
+#3 /Users/christophe/Projects/one19ltd/wp-content/plugins/timber-library/vendor/twig/twig/src/ExpressionParser.php(78): Twig\ExpressionParser->getPrimary()
+#4 /Users/christophe/Projects/one19ltd/wp-content/plugins/timber-library/vendor/twig/twig/src/Parser.php(166): Twig\ExpressionParser->parseExpression()
+#5 /Users/christophe/Projects/o in /Users/christophe/Projects/one19ltd/wp-content/themes/starter-theme/templates/page-home.twig on line 4
+
