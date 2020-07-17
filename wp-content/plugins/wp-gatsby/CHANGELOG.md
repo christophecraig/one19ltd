@@ -1,5 +1,23 @@
 # Change Log
 
+## 0.4.12
+
+### New Features
+
+- Added temporary `ContentType.archivePath` and `Taxonomy.archivePath` fields to the schema until WPGraphQL supports these fields.
+
+## 0.4.11
+
+### Bug Fixes
+
+- get_home_url() was being used where get_site_url() should've been used, causing the gql endpoint to not be referenced correctly in some situations. For example when using Bedrock.
+
+## 0.4.10
+
+### Bug Fixes
+
+- The Preview fix in the last release introduced a new bug where saving a draft at any time would send a webhook to the Preview instance.
+
 ## 0.4.9
 
 ### Bug Fixes

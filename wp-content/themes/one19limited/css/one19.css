@@ -1,0 +1,181 @@
+@font-face {
+	font-family: 'Darker Grotesque';
+	src: url("../fonts/Darker_Grotesque/DarkerGrotesque-Regular.ttf");
+}
+
+@font-face {
+	font-family: 'Darker Grotesque';
+	src: url("../fonts/Darker_Grotesque/DarkerGrotesque-Bold.ttf");
+	font-weight: bold;
+}
+
+body {
+	font-family: 'Darker Grotesque', monospace, Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+#masthead {
+	padding: 10px;
+	display: flex;
+	background: #161514;
+	color: #e6e6e6;
+}
+
+#masthead .custom-logo {
+	max-width: 150px;
+}
+
+.menu-menu-container {
+	text-align: right;
+	display: flex;
+	flex-grow: 1;
+	justify-content: flex-end;
+}
+
+.menu-item a {
+	padding: 0 12px;
+	text-decoration: none;
+	font-weight: 700;
+	color: #e6e6e6;
+}
+
+.nav-menu {
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+}
+
+#site-navigation {
+	text-align: right;
+	display: flex;
+	flex-grow: 1;
+	justify-content: flex-end;
+}
+
+.banner-important {
+	background: #e22d00;
+	color: #e6e6e6;
+	padding: 20px;
+	text-align: center;
+}
+
+.banner-important h3 {
+	font-size: 1.75em;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.banner-important p {
+	font-size: 1.5em;
+	margin: 0 20%;
+	line-height: 1;
+}
+
+.button {
+	padding: 12px 15px;
+	text-decoration: none;
+	color: #e22d00;
+	background-color: #e6e6e6;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.button-wrapper {
+	margin: 30px auto 15px;
+}
+
+.button:visited {
+	color: #e22d00;
+}
+
+.button:hover {
+	background-color: #cdcdcd;
+}
+
+.container {
+	display: flex;
+}
+
+.section {
+	transition: all 300ms ease-in-out;
+	background-size: cover;
+	color: #e6e6e6;
+	padding: 20px 30px;
+	flex-basis: 25%;
+	flex-grow: 1;
+}
+
+.section:hover {
+	flex-grow: 5;
+}
+
+.section-title {
+	text-align: right;
+	font-size: 3em;
+	letter-spacing: 1px;
+}
+
+.section-text {
+	font-size: 1.75em;
+	text-align: right;
+}
+
+.post {
+	margin: 20px 50px;
+	padding: 30px 30px;
+	border-radius: 6px;
+	background: #e6e6e6;
+}
+
+.post .entry-title {
+	margin-top: 0;
+}
+
+.clothing {
+	flex-shrink: 0;
+	background-image: url("../images/shallow-focus-photography-of-clothes-994517.jpg");
+}
+
+.nzta {
+	background-image: url("../images/trees-by-the-road-3396673.jpg");
+}
+
+.dry-cleaning {
+	background-color: #161514;
+}
+
+.computer {
+	flex-shrink: 0;
+	background-image: url("../images/black-and-white-hard-disk-drive-2582931.jpg");
+	background-position-x: center;
+}
+
+.brands {
+	display: flex;
+	justify-content: space-between;
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+}
+
+#menu-menu {
+	list-style-type: none;
+}
+
+.site-footer {
+	background-color: #161514;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex .column {
+	display: flex;
+	flex-grow: 1;
+}
+
+/*# sourceMappingURL=one19.css.map */

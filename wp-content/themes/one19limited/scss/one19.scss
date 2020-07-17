@@ -1,0 +1,174 @@
+$black: #161514;
+$white: #e6e6e6;
+$important-bg: rgb(226, 45, 0);
+$important-text: $white;
+
+@font-face {
+  font-family: 'Darker Grotesque';
+  src: url('../fonts/Darker_Grotesque/DarkerGrotesque-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Darker Grotesque';
+  src: url('../fonts/Darker_Grotesque/DarkerGrotesque-Bold.ttf');
+  font-weight: bold;
+}
+
+body {
+  font-family: 'Darker Grotesque', monospace, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#masthead {
+  padding: 10px;
+  display: flex;
+  background: $black;
+  color: $white;
+  .custom-logo {
+    max-width: 150px;
+  }
+}
+
+.menu-menu-container {
+  text-align: right;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.menu-item a {
+  padding: 0 12px;
+  text-decoration: none;
+  font-weight: 700;
+  color: $white;
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+#site-navigation {
+  text-align: right;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.banner-important {
+  background: $important-bg;
+  color: $important-text;
+  padding: 20px;
+  text-align: center;
+  h3 {
+    font-size: 1.75em;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  p {
+    font-size: 1.5em;
+    margin: 0 20%;
+    line-height: 1;
+  }
+}
+
+.button {
+  &-wrapper {
+    margin: 30px auto 15px;
+  }
+  &:visited {
+    color: $important-bg;
+  }
+  padding: 12px 15px;
+  text-decoration: none;
+  color: $important-bg;
+  background-color: $important-text;
+  border-radius: 5px;
+  font-weight: bold;
+  &:hover {
+    background-color: darken($color: $important-text, $amount: 10);
+  }
+}
+
+.container {
+  display: flex;
+}
+
+.section {
+  // width: 25%;
+  transition: all 300ms ease-in-out;
+  background-size: cover;
+  color: $white;
+  padding: 20px 30px;
+  flex-basis: 25%;
+  flex-grow: 1;
+  &:hover {
+    // width: 50%;
+    flex-grow: 5;
+  }
+  &-title {
+    text-align: right;
+    font-size: 3em;
+    letter-spacing: 1px;
+  }
+  &-text {
+    font-size: 1.75em;
+    text-align: right;
+  }
+}
+
+.post {
+  margin: 20px 50px;
+  padding: 30px 30px;
+  border-radius: 6px;
+  background: $white;
+  .entry-title {
+    margin-top: 0;
+  }
+}
+
+.clothing {
+  flex-shrink: 0;
+  background-image: url('../images/shallow-focus-photography-of-clothes-994517.jpg');
+}
+
+.nzta {
+  background-image: url('../images/trees-by-the-road-3396673.jpg');
+}
+
+.dry-cleaning {
+  background-color: $black;
+}
+
+.computer {
+  flex-shrink: 0;
+  background-image: url('../images/black-and-white-hard-disk-drive-2582931.jpg');
+  background-position-x: center;
+}
+
+.brands {
+  display: flex;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+}
+#menu-menu {
+  list-style-type: none;
+}
+
+.site-footer {
+  background-color: $black;
+}
+
+// Utilities
+.flex {
+  display: flex;
+  .column {
+    display: flex;
+    flex-grow: 1;
+  }
+}
