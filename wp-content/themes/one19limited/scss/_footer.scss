@@ -1,0 +1,49 @@
+#menu-menu {
+  list-style-type: none;
+}
+
+.site-footer {
+  background-color: $black;
+  color: $white;
+  padding: 30px;
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 0;
+  }
+  a {
+    font-weight: 700;
+    text-decoration: none;
+  }
+  & > div {
+    margin: 0 auto;
+    max-width: $max-width;
+  }
+  p {
+    margin: 0 0 0.5rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: left;
+  }
+  i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  a {
+    color: inherit;
+  }
+  .column {
+    // flex: 1 1 0;
+  }
+}
+
+.fa-facebook,
+.fa-facebook-messenger {
+  //   color: #4267b2;
+}
+
+.site-info {
+  text-align: center;
+}
