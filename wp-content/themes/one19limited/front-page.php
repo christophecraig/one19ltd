@@ -47,11 +47,14 @@ get_header(); ?>
 
     </section>
 
+    <?php if (get_field('nzta-title')): ?>
     <section class="section nzta">
         <h2 class="section-title"><?php echo get_field('nzta-title'); ?></h2>
         <p class="section-text"><?php echo get_field('nzta-text'); ?></p>
     </section>
+    <?php endif; ?>
 
+    <?php if (get_field('dry_cleaning-title')): ?>
     <section class="section dry-cleaning">
         <h2 class="section-title"><?php echo get_field(
             'dry_cleaning-title'
@@ -60,13 +63,16 @@ get_header(); ?>
             'dry_cleaning-text'
         ); ?></p>
     </section>
+    <?php endif; ?>
 
+    <?php if (get_field('computer-title')): ?>
     <section class="section computer">
         <h2 class="section-title"><?php echo get_field(
             'computer-title'
         ); ?></h2>
         <p class="section-text"><?php echo get_field('computer-text'); ?></p>
     </section>
+    <?php endif; ?>
 </div>
 <?php if (get_field('important-title')) { ?>
 <div class="banner-important">

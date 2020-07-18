@@ -26,17 +26,6 @@
         <a href="<?php echo esc_url(
             __('https://wordpress.org/', 'one19limited')
         ); ?>">
-            <?php printf(
-                esc_html__('Proudly powered by %s', 'one19limited'),
-                'WordPress'
-            ); ?>
-        </a>
-        <span class="sep"> | </span>
-        <?php printf(
-            esc_html__('Theme: %1$s by %2$s.', 'one19limited'),
-            'one19limited',
-            '<a href="http://underscores.me/">Underscores.me</a>'
-        ); ?>
     </div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
