@@ -7,82 +7,55 @@
  * @package one19limited
  */
 
-get_header(); ?>
+use Timber\Post;
+use Timber\Timber;
 
-<div class="container">
-    <section class="clothing section">
-        <h2 class="section-title"><?php echo get_field(
-            'clothing-title'
-        ); ?></h2>
-        <p class="section-text"><?php echo get_field('clothing-text'); ?></p>
-        <div class="brands">
-            <div class="brand"><a target="_blank" href="<?php echo get_field(
-                'clothing-brand_1'
-            )['website']; ?>">
-                    <?php echo wp_get_attachment_image(
-                        get_field('clothing-brand_1')['logo'],
-                        'medium'
-                    ); ?>
-                </a>
-            </div>
-            <div class="brand"><a target="_blank" href="<?php echo get_field(
-                'clothing-brand_2'
-            )['website']; ?>">
-                    <?php echo wp_get_attachment_image(
-                        get_field('clothing-brand_2')['logo'],
-                        'medium'
-                    ); ?>
-                </a>
-            </div>
-            <div class="brand"><a target="_blank" href="<?php echo get_field(
-                'clothing-brand_3'
-            )['website']; ?>">
-                    <?php echo wp_get_attachment_image(
-                        get_field('clothing-brand_3')['logo'],
-                        'medium'
-                    ); ?>
-                </a>
-            </div>
-        </div>
+get_header();
 
-    </section>
+$context = Timber::context();
+$post = new Post();
+$context['o19'] = [
+    'clothing' => [
+        'title' => $post->custom['clothing-title'],
+        'text' => $post->custom['clothing-text'],
+        'brands' => [
+            'brand1' => [
+                'logo' => $post->custom['clothing-brand_1_logo'],
+                'url' => $post->custom['clothing-brand_1_website'],
+            ],
+            'brand2' => [
+                'logo' => $post->custom['clothing-brand_2_logo'],
+                'url' => $post->custom['clothing-brand_2_website'],
+            ],
+            'brand3' => [
+                'logo' => $post->custom['clothing-brand_3_logo'],
+                'url' => $post->custom['clothing-brand_3_website'],
+            ],
+            'brand4' => [
+                'logo' => $post->custom['clothing-brand_4_logo'],
+                'url' => $post->custom['clothing-brand_4_website'],
+            ],
+        ],
+    ],
+    'nzta' => [
+        'title' => $post->custom['nzta-title'],
+        'text' => $post->custom['nzta-text'],
+    ],
+    'dry_cleaning' => [
+        'title' => $post->custom['dry_cleaning-title'],
+        'text' => $post->custom['dry_cleaning-text'],
+    ],
+    'computer_repair' => [
+        'title' => $post->custom['computer-title'],
+        'text' => $post->custom['computer-text'],
+    ],
+    'important' => [
+        'title' => $post->custom['important-title'],
+        'text' => $post->custom['important-text'],
+        'url' => $post->custom['important-call_to_action'],
+    ],
+];
+Timber::render('front-page.twig', $context['o19']);
 
-    <?php if (get_field('nzta-title')): ?>
-    <section class="section nzta">
-        <h2 class="section-title"><?php echo get_field('nzta-title'); ?></h2>
-        <p class="section-text"><?php echo get_field('nzta-text'); ?></p>
-    </section>
-    <?php endif; ?>
-
-    <?php if (get_field('dry_cleaning-title')): ?>
-    <section class="section dry-cleaning">
-        <h2 class="section-title"><?php echo get_field(
-            'dry_cleaning-title'
-        ); ?></h2>
-        <p class="section-text"><?php echo get_field(
-            'dry_cleaning-text'
-        ); ?></p>
-    </section>
-    <?php endif; ?>
-
-    <?php if (get_field('computer-title')): ?>
-    <section class="section computer">
-        <h2 class="section-title"><?php echo get_field(
-            'computer-title'
-        ); ?></h2>
-        <p class="section-text"><?php echo get_field('computer-text'); ?></p>
-    </section>
-    <?php endif; ?>
-</div>
-<?php if (get_field('important-title')) { ?>
-<div class="banner-important">
-    <h3><?php echo get_field('important-title'); ?></h3>
-    <p><?php echo get_field('important-text'); ?></p>
-    <div class="button-wrapper"><a class="button button-cta" href="<?php echo get_field(
-        'important-call_to_action'
-    ); ?>">Get 10% off</a></div>
-</div>
-<?php } ?>
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+get_sidebar();
+get_footer(); ?>

@@ -8,6 +8,26 @@
   margin-top: 0;
 }
 
-.with_frm_style .frm_primary_label {
+.frm_primary_label {
   color: $white;
+}
+
+.frm_message {
+  background-color: #40bb50;
+  color: $white;
+}
+
+.frm_error_style {
+  background-color: #f03020;
+}
+
+.frm_message,
+.frm_error_style {
+  padding: 15px 25px;
+  margin: 0;
+  border-radius: 7px;
+  p {
+    margin: 0;
+    font-weight: 600;
+  }
 }

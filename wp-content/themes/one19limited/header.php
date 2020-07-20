@@ -8,6 +8,10 @@
  *
  * @package one19limited
  */
+
+use Timber\Menu;
+use Timber\Post;
+use Timber\Timber;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -15,7 +19,6 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <?php wp_head(); ?>
 </head>
@@ -27,20 +30,12 @@
             'Skip to content',
             'one19limited'
         ); ?></a>
+        <?php
+        $context = Timber::context();
+        $context['menu'] = new Menu('Menu');
+        $context['custom_logo'] = get_custom_logo();
+        $context['important'] = new Post(259);
+        Timber::render('header.twig', $context);
 
-        <header id="masthead" class="site-header">
-            <div class="site-branding">
-                <?php echo get_custom_logo(); ?>
-            </div><!-- .site-branding -->
 
-            <nav id="site-navigation" class="main-navigation">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e(
-                    'Primary Menu',
-                    'one19limited'
-                ); ?></button>
-                <?php wp_nav_menu([
-                    'theme_location' => 'menu-1',
-                    'menu_id' => 'primary-menu',
-                ]); ?>
-            </nav><!-- #site-navigation -->
-        </header><!-- #masthead -->
+?>

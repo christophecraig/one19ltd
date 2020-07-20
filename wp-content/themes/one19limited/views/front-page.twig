@@ -1,0 +1,62 @@
+<div class="container">
+  <section class="clothing section">
+    <h2 class="section-title">
+      {{ clothing.title }}
+    </h2>
+    <p class="section-text">
+      {{ clothing.text }}
+    </p>
+    <div class="brands">
+      {% for brand in clothing.brands %}
+        <div class="brand">
+          <a target="_blank" href="{{ brand.url }}">
+            <img src="{{ Image(brand.logo).src }}" />
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% if nzta.title %}
+    <section class="section nzta">
+      <h2 class="section-title">
+        {{ nzta.title }}
+      </h2>
+      <p class="section-text">
+        {{ nzta.text }}
+      </p>
+    </section>
+  {% endif %}
+  {% if dry_cleaning.title %}
+    <section class="section dry-cleaning">
+      <h2 class="section-title">
+        {{ dry_cleaning.title }}
+      </h2>
+      <p class="section-text">
+        {{ dry_cleaning.text }}
+      </p>
+    </section>
+  {% endif %}
+  {% if computer.title %}
+    <section class="section computer">
+      <h2 class="section-title">
+        {{ computer.title }}
+      </h2>
+      <p class="section-text">
+        {{ computer.text }}
+      </p>
+    </section>
+  {% endif %}
+</div>
+{% if important.title %}
+  <div class="banner-important">
+    <h3>
+      {{ important.title }}
+    </h3>
+    <p>
+      {{ important.text }}
+    </p>
+    <div class="button-wrapper">
+      <a class="button button-cta" href="{{ important.url }}">Get 10% off</a>
+    </div>
+  </div>
+{% endif %}

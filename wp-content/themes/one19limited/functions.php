@@ -189,10 +189,7 @@ function one19limited_scripts()
         _S_VERSION
     );
     wp_style_add_data('one19limited-style', 'rtl', 'replace');
-    wp_enqueue_style(
-        'font',
-        '//fonts.googleapis.com/css2?family=Bungee+Inline&display=swap'
-    );
+
     // Custom style generated from /scss/one19.scss
     wp_enqueue_style(
         'one19limited-main-style',

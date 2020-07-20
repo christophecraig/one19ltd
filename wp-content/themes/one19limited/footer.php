@@ -8,29 +8,21 @@
  *
  * @package one19limited
  */
+
+use Timber\Timber;
+
+$context = Timber::context();
+// $sidebars = Timber::get_sidebar();
+$footer = [];
+$footer[] = Timber::get_widgets('footer_area_one');
+$footer[] = Timber::get_widgets('footer_area_two');
+$footer[] = Timber::get_widgets('footer_area_three');
+$footer[] = Timber::get_widgets('footer_area_four');
+$context['footer'] = $footer;
+Timber::render('footer.twig', $context);
+
+wp_footer();
 ?>
-
-<footer id="colophon" class="site-footer">
-    <div class="flex">
-        <div class="column">
-            <?php dynamic_sidebar('footer_area_one'); ?>
-        </div>
-        <div class="column">
-            <?php dynamic_sidebar('footer_area_two'); ?>
-        </div>
-        <div class="column"><?php dynamic_sidebar('footer_area_three'); ?></div>
-        <div class="column"><?php dynamic_sidebar('footer_area_four'); ?></div>
-
-    </div>
-    <div class="site-info">
-        <a href="<?php echo esc_url(
-            __('https://wordpress.org/', 'one19limited')
-        ); ?>">
-    </div><!-- .site-info -->
-</footer><!-- #colophon -->
-</div><!-- #page -->
-
-<?php wp_footer(); ?>
 
 </body>
 
