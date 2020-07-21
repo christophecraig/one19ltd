@@ -11,19 +11,20 @@
 .important-header {
   flex-grow: 3;
 }
+#masthead {
+  .menu-menu-container {
+    text-align: right;
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
 
-.menu-menu-container {
-  text-align: right;
-  display: flex;
-  flex-grow: 1;
-  justify-content: flex-end;
-}
-
-.menu-item a {
-  padding: 0 20px;
-  text-decoration: none;
-  font-weight: 700;
-  color: $white;
+  .menu-item a {
+    padding: 0 20px;
+    text-decoration: none;
+    font-weight: 700;
+    color: $white;
+  }
 }
 
 .nav-menu {

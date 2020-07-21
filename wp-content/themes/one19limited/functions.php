@@ -137,7 +137,8 @@ function one19limited_widgets_init()
         'name' => 'Footer area one',
         'id' => 'footer_area_one',
         'description' => 'This widget area discription',
-        'before_widget' => '<section class="footer-area footer-area-one">',
+        'before_widget' =>
+            '<section class="footer-area footer-area-one column">',
         'after_widget' => '</section>',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
@@ -147,7 +148,8 @@ function one19limited_widgets_init()
         'name' => 'Footer area two',
         'id' => 'footer_area_two',
         'description' => 'This widget area discription',
-        'before_widget' => '<section class="footer-area footer-area-two">',
+        'before_widget' =>
+            '<section class="footer-area footer-area-two column">',
         'after_widget' => '</section>',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
@@ -157,7 +159,8 @@ function one19limited_widgets_init()
         'name' => 'Footer area three',
         'id' => 'footer_area_three',
         'description' => 'This widget area discription',
-        'before_widget' => '<section class="footer-area footer-area-three">',
+        'before_widget' =>
+            '<section class="footer-area footer-area-three column">',
         'after_widget' => '</section>',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
@@ -167,7 +170,8 @@ function one19limited_widgets_init()
         'name' => 'Footer area four',
         'id' => 'footer_area_four',
         'description' => 'This widget area discription',
-        'before_widget' => '<section class="footer-area footer-area-three">',
+        'before_widget' =>
+            '<section class="footer-area footer-area-three column">',
         'after_widget' => '</section>',
         'before_title' => '<h4>',
         'after_title' => '</h4>',

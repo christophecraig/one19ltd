@@ -52,12 +52,12 @@ ul {
 	padding: 0;
 }
 
-.flex {
+.container {
 	display: flex;
+	flex-direction: column;
 }
 
-.flex .column {
-	display: flex;
+.container .column {
 	flex-grow: 1;
 }
 
@@ -101,7 +101,7 @@ ul {
 
 @media (min-width: 768px) {
 	.container {
-		display: flex;
+		flex-direction: row;
 	}
 }
 
@@ -120,14 +120,14 @@ ul {
 	flex-grow: 3;
 }
 
-.menu-menu-container {
+#masthead .menu-menu-container {
 	text-align: right;
 	display: flex;
 	flex-grow: 1;
 	justify-content: flex-end;
 }
 
-.menu-item a {
+#masthead .menu-item a {
 	padding: 0 20px;
 	text-decoration: none;
 	font-weight: 700;
@@ -155,14 +155,15 @@ ul {
 .site-footer {
 	background-color: #161514;
 	color: #e6e6e6;
-	padding: 30px;
+	padding: 25px;
 }
 
 .site-footer h4 {
-	font-size: 1.5rem;
+	font-size: 1.65rem;
 	font-weight: 700;
 	letter-spacing: 1px;
 	margin-top: 0;
+	margin-bottom: 0.5rem;
 }
 
 .site-footer a {
@@ -190,6 +191,10 @@ ul {
 
 .site-footer a {
 	color: inherit;
+}
+
+.site-footer .column {
+	padding: 10px 0;
 }
 
 .site-info {
@@ -6324,30 +6329,32 @@ readers do not read off random characters that represent icons */
 	line-height: 1;
 }
 
-@media (min-width: 768px) {
-	.section {
-		transition: all 300ms ease-in-out;
-		background-size: cover;
-		color: #e6e6e6;
-		padding: 20px 30px;
-		flex: 1 1 0;
-		background-color: #ddd;
-		box-sizing: border-box;
-		transition: flex-grow 400ms ease-in-out;
-		height: 740px;
-	}
-	.section:hover {
-		flex-grow: 3;
-	}
-	.section-title {
-		text-align: right;
-		font-size: 3rem;
-		letter-spacing: 1px;
-	}
-	.section-text {
-		font-size: 1.75rem;
-		text-align: right;
-	}
+.section {
+	transition: all 300ms ease-in-out;
+	background-size: cover;
+	color: #e6e6e6;
+	padding: 20px 30px;
+	flex: 1 1 0;
+	background-color: #ddd;
+	box-sizing: border-box;
+	transition: flex-grow 400ms ease-in-out;
+	height: 720px;
+}
+
+.section:hover {
+	flex-grow: 3;
+}
+
+.section-title {
+	text-align: right;
+	margin: 0.5rem 0;
+	font-size: 3rem;
+	letter-spacing: 1px;
+}
+
+.section-text {
+	font-size: 1.75rem;
+	text-align: right;
 }
 
 .clothing {

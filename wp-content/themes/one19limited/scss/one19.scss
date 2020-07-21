@@ -27,31 +27,32 @@
   }
 }
 
-@media (min-width: 768px) {
-  .section {
-    transition: all 300ms ease-in-out;
-    background-size: cover;
-    color: $white;
-    padding: 20px 30px;
-    flex: 1 1 0;
-    background-color: #ddd;
-    box-sizing: border-box;
-    transition: flex-grow 400ms ease-in-out;
-    height: 740px;
-    &:hover {
-      flex-grow: 3;
-    }
-    &-title {
-      text-align: right;
-      font-size: 3rem;
-      letter-spacing: 1px;
-    }
-    &-text {
-      font-size: 1.75rem;
-      text-align: right;
-    }
+// @media (min-width: 768px) {
+.section {
+  transition: all 300ms ease-in-out;
+  background-size: cover;
+  color: $white;
+  padding: 20px 30px;
+  flex: 1 1 0;
+  background-color: #ddd;
+  box-sizing: border-box;
+  transition: flex-grow 400ms ease-in-out;
+  height: 720px;
+  &:hover {
+    flex-grow: 3;
+  }
+  &-title {
+    text-align: right;
+    margin: 0.5rem 0;
+    font-size: 3rem;
+    letter-spacing: 1px;
+  }
+  &-text {
+    font-size: 1.75rem;
+    text-align: right;
   }
 }
+// }
 
 .clothing {
   flex-shrink: 0;
