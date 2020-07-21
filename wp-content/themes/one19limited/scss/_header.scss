@@ -27,6 +27,15 @@
   }
 }
 
+.menu-toggle {
+  background-color: transparent;
+  border: 0;
+  color: $white;
+  &:focus {
+    border: none;
+  }
+}
+
 .nav-menu {
   list-style-type: none;
   display: flex;

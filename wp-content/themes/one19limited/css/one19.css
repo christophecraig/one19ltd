@@ -134,6 +134,16 @@ ul {
 	color: #e6e6e6;
 }
 
+.menu-toggle {
+	background-color: transparent;
+	border: 0;
+	color: #e6e6e6;
+}
+
+.menu-toggle:focus {
+	border: none;
+}
+
 .nav-menu {
 	list-style-type: none;
 	display: flex;
