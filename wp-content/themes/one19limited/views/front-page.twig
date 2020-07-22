@@ -1,4 +1,14 @@
 <div class="container">
+  {% if nzta.title %}
+    <section class="section nzta">
+      <h2 class="section-title">
+        {{ nzta.title }}
+      </h2>
+      <p class="section-text">
+        {{ nzta.text }}
+      </p>
+    </section>
+  {% endif %}
   <section class="clothing section">
     <h2 class="section-title">
       {{ clothing.title }}
@@ -16,16 +26,6 @@
       {% endfor %}
     </div>
   </section>
-  {% if nzta.title %}
-    <section class="section nzta">
-      <h2 class="section-title">
-        {{ nzta.title }}
-      </h2>
-      <p class="section-text">
-        {{ nzta.text }}
-      </p>
-    </section>
-  {% endif %}
   {% if dry_cleaning.title %}
     <section class="section dry-cleaning">
       <h2 class="section-title">

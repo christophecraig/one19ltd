@@ -55,8 +55,15 @@
 // }
 
 .clothing {
-  flex-shrink: 0;
+  order: -1;
   background-image: url('../images/shallow-focus-photography-of-clothes-994517.jpg');
+}
+
+@media (min-width: 768px) {
+  .clothing {
+    order: 0;
+    flex-grow: 3;
+  }
 }
 
 .nzta {

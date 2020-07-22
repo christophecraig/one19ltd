@@ -116,15 +116,43 @@ ul {
 	max-width: 150px;
 }
 
+@media (min-width: 768px) {
+	.important-header {
+		display: flex;
+	}
+	#masthead .menu-menu-container {
+		flex-grow: 1;
+	}
+}
+
 .important-header {
 	flex-grow: 3;
+	display: none;
 }
 
 #masthead .menu-menu-container {
 	text-align: right;
 	display: flex;
-	flex-grow: 1;
 	justify-content: flex-end;
+}
+
+#masthead .menu-toggle {
+	display: flex;
+	align-items: center;
+}
+
+#masthead .menu-toggle i,
+#masthead .menu-toggle span {
+	display: flex;
+}
+
+#masthead .menu-toggle span {
+	font-size: 1.5rem;
+	margin-left: 0.5rem;
+}
+
+#masthead .menu-toggle i {
+	font-size: 2rem;
 }
 
 #masthead .menu-item a {
@@ -6368,8 +6396,15 @@ readers do not read off random characters that represent icons */
 }
 
 .clothing {
-	flex-shrink: 0;
+	order: -1;
 	background-image: url("../images/shallow-focus-photography-of-clothes-994517.jpg");
+}
+
+@media (min-width: 768px) {
+	.clothing {
+		order: 0;
+		flex-grow: 3;
+	}
 }
 
 .nzta {
