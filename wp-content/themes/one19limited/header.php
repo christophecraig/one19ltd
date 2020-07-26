@@ -17,6 +17,7 @@ $context = Timber::context();
 $context['menu'] = new Menu('Menu');
 $context['custom_logo'] = get_custom_logo();
 $context['important'] = new Post(259);
+$context['widgets']['love_local'] = Timber::get_widgets('love_local');
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
