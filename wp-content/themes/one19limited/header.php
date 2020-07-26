@@ -12,6 +12,11 @@
 use Timber\Menu;
 use Timber\Post;
 use Timber\Timber;
+
+$context = Timber::context();
+$context['menu'] = new Menu('Menu');
+$context['custom_logo'] = get_custom_logo();
+$context['important'] = new Post(259);
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -30,12 +35,5 @@ use Timber\Timber;
             'Skip to content',
             'one19limited'
         ); ?></a>
-        <?php
-        $context = Timber::context();
-        $context['menu'] = new Menu('Menu');
-        $context['custom_logo'] = get_custom_logo();
-        $context['important'] = new Post(259);
-        Timber::render('header.twig', $context);
 
-
-?>
+        <?php Timber::render('header.twig', $context);

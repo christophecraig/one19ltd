@@ -40,7 +40,7 @@
 }
 
 body {
-	font-family: 'Darker Grotesque', monospace, Helvetica, Arial, sans-serif;
+	font-family: 'Darker Grotesque', Helvetica, Arial, sans-serif;
 	margin: 0;
 	padding: 0;
 	font-size: 20px;
@@ -48,8 +48,14 @@ body {
 }
 
 ul {
+	list-style-type: none;
 	margin: 0;
 	padding: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
 }
 
 .container {
@@ -181,6 +187,9 @@ ul {
 }
 
 @media (min-width: 768px) {
+	.love-local {
+		flex-basis: 100px;
+	}
 	#masthead .menu-toggle {
 		display: none;
 	}
@@ -197,7 +206,6 @@ ul {
 	#site-navigation {
 		text-align: right;
 		display: flex;
-		flex-grow: 1;
 		justify-content: flex-end;
 	}
 }
@@ -223,6 +231,7 @@ ul {
 .site-footer a {
 	font-weight: 700;
 	text-decoration: none;
+	color: inherit;
 }
 
 .site-footer > div {
@@ -243,27 +252,130 @@ ul {
 	margin-right: 1rem;
 }
 
-.site-footer a {
-	color: inherit;
-}
-
 .site-footer .column {
 	padding: 10px 0;
+}
+
+.site-footer .image {
+	width: 180px;
 }
 
 .site-info {
 	text-align: center;
 }
 
-.post {
-	margin: 20px 50px;
-	padding: 30px 30px;
+.blog .post {
+	display: flex;
+	flex-direction: column;
+	margin: 1rem;
+	overflow: hidden;
 	border-radius: 6px;
 	background: #e6e6e6;
+	box-shadow: 0 5px 5px #c0c0c0;
 }
 
-.post .entry-title {
+.blog .post .entry-title {
 	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.blog .post .entry-title a {
+	color: #e6e6e6;
+}
+
+.post-header {
+	color: #e6e6e6;
+	padding: 20px;
+	background: #dc6612;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.post-main {
+	padding: 1rem 1rem 0;
+	display: flex;
+	flex: 1;
+}
+
+.post-content {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	justify-content: space-between;
+}
+
+.read-more {
+	display: flex;
+	justify-content: flex-end;
+	padding: 1rem;
+	color: #e6e6e6;
+	background-color: #dc6612;
+	margin: 1rem -1rem 0 -1rem;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.read-more::after {
+	margin-left: 0.25rem;
+	transition: 0.25s ease-in-out;
+	content: '\f061';
+	font-family: 'Font Awesome 5 Free';
+	overflow: hidden;
+	transform: scaleX(0);
+	transform-origin: left;
+	display: inline-block;
+}
+
+.read-more:hover::after {
+	transform: scaleX(1);
+}
+
+.pagination-container {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	overflow: hidden;
+	flex-basis: 100%;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+
+.pagination-list {
+	display: flex;
+	align-items: center;
+}
+
+.pagination-item:not(:last-child) {
+	margin-right: 4px;
+}
+
+.pagination-item a {
+	display: block;
+	width: 36px;
+	height: 36px;
+	text-align: center;
+	line-height: 32px;
+	border-radius: 50%;
+	border: 1px solid #161514;
+}
+
+.pagination-item a.current {
+	background: #161514;
+	color: #e6e6e6;
+}
+
+@media (min-width: 768px) {
+	.site-main {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.blog .post {
+		width: calc(50% - 1.5rem);
+	}
+	.blog .post:nth-child(even) {
+		margin-left: 0;
+	}
 }
 
 .survey {

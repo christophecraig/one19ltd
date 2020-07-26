@@ -1,9 +1,114 @@
-.post {
-  margin: 20px 50px;
-  padding: 30px 30px;
-  border-radius: 6px;
-  background: $white;
-  .entry-title {
-    margin-top: 0;
+.blog {
+  .post {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #e6e6e6;
+    box-shadow: 0 5px 5px #c0c0c0;
+    .entry-title {
+      margin-top: 0;
+      margin-bottom: 0;
+      a {
+        color: $white;
+      }
+    }
+  }
+}
+.post-header {
+  color: $white;
+  padding: 20px;
+  background: darken($primary, 10%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-main {
+  padding: 1rem 1rem 0;
+  display: flex;
+  flex: 1;
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.read-more {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  color: $white;
+  background-color: darken($primary, 10%);
+  margin: 1rem -1rem 0 -1rem;
+  font-weight: 500;
+  text-decoration: none;
+  &::after {
+    margin-left: 0.25rem;
+    transition: 0.25s ease-in-out;
+    content: '\f061';
+    font-family: 'Font Awesome 5 Free';
+    // width: 0;
+    overflow: hidden;
+    transform: scaleX(0);
+    transform-origin: left;
+    display: inline-block;
+  }
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+      // width: 1.35rem;
+    }
+  }
+}
+
+.pagination-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  overflow: hidden;
+  flex-basis: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pagination-list {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-item {
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+  a {
+    display: block;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 50%;
+    border: 1px solid $black;
+    &.current {
+      background: $black;
+      color: $white;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .site-main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .blog .post {
+    width: calc(50% - 1.5rem);
+    &:nth-child(even) {
+      margin-left: 0;
+    }
   }
 }

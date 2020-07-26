@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html {{ language_attributes }}>
+{% include "header.twig" %}
+
+{% block head %}
+    
+{% endblock %}
+
+</head>
+
+<body class="{{ body_class }}">
+
+{% block content %}
+    <!-- The template’s main content will go here. -->
+{% endblock %}
+
+{% include "footer.twig" %}
+{{ dump(wp_footer)}}
+{{ wp_footer }}
+
+</body>
+</html>

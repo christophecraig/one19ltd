@@ -68,6 +68,10 @@
 }
 
 @media (min-width: 768px) {
+  .love-local {
+    flex-basis: 100px;
+  }
+
   #masthead {
     .menu-toggle {
       display: none;
@@ -86,7 +90,6 @@
   #site-navigation {
     text-align: right;
     display: flex;
-    flex-grow: 1;
     justify-content: flex-end;
   }
 }

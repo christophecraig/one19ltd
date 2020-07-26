@@ -124,22 +124,11 @@ add_action('after_setup_theme', 'one19limited_content_width', 0);
 function one19limited_widgets_init()
 {
     register_sidebar([
-        'name' => esc_html__('Sidebar', 'one19limited'),
-        'id' => 'sidebar-1',
-        'description' => esc_html__('Add widgets here.', 'one19limited'),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h2 class="widget-title">',
-        'after_title' => '</h2>',
-    ]);
-
-    register_sidebar([
         'name' => 'Footer area one',
         'id' => 'footer_area_one',
         'description' => 'This widget area discription',
-        'before_widget' =>
-            '<section class="footer-area footer-area-one column">',
-        'after_widget' => '</section>',
+        'before_widget' => '',
+        'after_widget' => '',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
     ]);
@@ -148,9 +137,8 @@ function one19limited_widgets_init()
         'name' => 'Footer area two',
         'id' => 'footer_area_two',
         'description' => 'This widget area discription',
-        'before_widget' =>
-            '<section class="footer-area footer-area-two column">',
-        'after_widget' => '</section>',
+        'before_widget' => '',
+        'after_widget' => '',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
     ]);
@@ -159,9 +147,8 @@ function one19limited_widgets_init()
         'name' => 'Footer area three',
         'id' => 'footer_area_three',
         'description' => 'This widget area discription',
-        'before_widget' =>
-            '<section class="footer-area footer-area-three column">',
-        'after_widget' => '</section>',
+        'before_widget' => '',
+        'after_widget' => '',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
     ]);
@@ -170,9 +157,8 @@ function one19limited_widgets_init()
         'name' => 'Footer area four',
         'id' => 'footer_area_four',
         'description' => 'This widget area discription',
-        'before_widget' =>
-            '<section class="footer-area footer-area-three column">',
-        'after_widget' => '</section>',
+        'before_widget' => '',
+        'after_widget' => '',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
     ]);

@@ -10,8 +10,6 @@
 use Timber\Post;
 use Timber\Timber;
 
-get_header();
-
 $context = Timber::context();
 $post = new Post();
 $context['o19'] = [
@@ -56,6 +54,4 @@ $context['o19'] = [
     ],
 ];
 Timber::render('front-page.twig', $context['o19']);
-
-get_sidebar();
-get_footer(); ?>
+?>

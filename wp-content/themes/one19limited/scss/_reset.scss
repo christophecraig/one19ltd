@@ -1,5 +1,5 @@
 body {
-  font-family: 'Darker Grotesque', monospace, Helvetica, Arial, sans-serif;
+  font-family: 'Darker Grotesque', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   font-size: 20px;
@@ -7,6 +7,12 @@ body {
 }
 
 ul {
+  list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
