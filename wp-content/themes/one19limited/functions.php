@@ -124,6 +124,26 @@ add_action('after_setup_theme', 'one19limited_content_width', 0);
 function one19limited_widgets_init()
 {
     register_sidebar([
+        'name' => 'Important Banner',
+        'id' => 'important_banner',
+        'description' => 'Important things to display (e.g. the survey)',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3 class="title-important">',
+        'after_title' => '</h3>',
+    ]);
+
+    register_sidebar([
+        'name' => 'Love Local',
+        'id' => 'love_local',
+        'description' => 'The love local logo in the header',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ]);
+
+    register_sidebar([
         'name' => 'Footer area one',
         'id' => 'footer_area_one',
         'description' => 'This widget area discription',
