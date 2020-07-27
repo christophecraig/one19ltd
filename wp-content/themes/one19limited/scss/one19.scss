@@ -57,6 +57,13 @@
 
 .clothing {
   order: -1;
+}
+
+.webp .clothing {
+  background-image: url('../images/shallow-focus-photography-of-clothes-994517.webp');
+}
+
+.no-webp .clothing {
   background-image: url('../images/shallow-focus-photography-of-clothes-994517.jpg');
 }
 
@@ -67,7 +74,11 @@
   }
 }
 
-.nzta {
+.webp .nzta {
+  background-image: url('../images/trees-by-the-road-3396673.webp');
+}
+
+.no-webp .nzta {
   background-image: url('../images/trees-by-the-road-3396673.jpg');
 }
 
