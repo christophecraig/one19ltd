@@ -38,6 +38,17 @@
   padding: 1rem 1rem 0;
   display: flex;
   flex: 1;
+  flex-direction: column;
+}
+
+.post-images {
+  display: flex;
+}
+
+.post-image {
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
 }
 
 .post-content {

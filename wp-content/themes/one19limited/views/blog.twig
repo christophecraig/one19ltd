@@ -15,11 +15,14 @@
         </header>
         <div class="post-main">
           <div class="post-images">
-            {% for image in custom_images %}
-              <div class="post-image">
-                <img src="{{ Image(image).src }}" />
-              </div>
-            {% endfor %}
+            {# Checking existence, when image is removed, field still exists but false #}
+            {% if post.pictures['post-picture_1'] %}
+              {% for img in post.pictures %}
+                <div class="post-image">
+                  <img src="{{ Image(img).src('thumbnail') }}" />
+                </div>
+              {% endfor %}
+            {% endif %}
           </div>
           <div class="post-content">
             {{ post.get_preview }}

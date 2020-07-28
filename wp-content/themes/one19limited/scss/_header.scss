@@ -1,6 +1,7 @@
 #masthead {
   padding: 10px;
   display: flex;
+  align-items: center;
   background: $black;
   color: $white;
   flex-wrap: wrap;
@@ -17,6 +18,11 @@
     color: $white;
   }
 }
+
+.love-local {
+  max-width: 150px;
+}
+
 #site-navigation {
   flex-basis: 100%;
   text-align: center;
