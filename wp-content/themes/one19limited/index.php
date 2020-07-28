@@ -19,6 +19,6 @@ get_header();
 $context = Timber::context();
 $context['posts'] = Timber::get_posts();
 $context['pagination'] = Timber::get_pagination();
-Timber::render('posts.twig', $context);
+Timber::render('blog.twig', $context);
 get_sidebar();
 get_footer();

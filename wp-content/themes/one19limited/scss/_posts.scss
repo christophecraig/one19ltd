@@ -1,4 +1,13 @@
 .blog {
+  .page-header {
+    width: 100%;
+  }
+  .page-title {
+    display: inline-block;
+    padding-right: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 4px solid $primary;
+  }
   .post {
     display: flex;
     flex-direction: column;
@@ -93,6 +102,11 @@
     line-height: 32px;
     border-radius: 50%;
     border: 1px solid $black;
+    background-color: $white;
+    transition: background-color 0.2s ease-in;
+    &:hover {
+      background-color: darken($white, 10%);
+    }
     &.current {
       background: $black;
       color: $white;

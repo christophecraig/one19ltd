@@ -1,0 +1,51 @@
+<div class="box">
+  <main id="primary" class="site-main">
+    <header class="page-header">
+      <h1 class="page-title">
+        {{ wp_title }}
+      </h1>
+    </header>
+    {% for post in posts %}
+      <article class="post">
+        <header class="post-header">
+          <h2 class="post-title entry-title">
+            <a href="{{ post.link }}">{{ post.title }}</a>
+          </h2>
+          <time datetime="{{ post.post_date }}">{{ post.date }}</time>
+        </header>
+        <div class="post-main">
+          <div class="post-images">
+            {% for image in custom_images %}
+              <div class="post-image">
+                <img src="{{ Image(image).src }}" />
+              </div>
+            {% endfor %}
+          </div>
+          <div class="post-content">
+            {{ post.get_preview }}
+          </div>
+        </div>
+      </article>
+    {% else %}
+      {{ function('get_template_part', 'template-parts/content', 'none') }};
+    {% endfor %}
+    <nav class="pagination-container">
+      <ul class="pagination-list">
+        {% for page in pagination.pages %}
+          <li class="pagination-item">
+            {% if page.name %}
+              <a href="{{ page.link }}"
+                class="{{ page.class }}"
+                {{ page.current ? 'disabled' : '' }}>
+                {{ page.title }}
+              </a>
+            {% else %}
+              {{ page.title }}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </main>
+  <!-- #main -->
+</div>
