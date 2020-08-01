@@ -17,11 +17,17 @@
     "url": "https://github.com/Automattic/_s/issues"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
     "@fortawesome/fontawesome-free": "^5.14.0",
     "@wordpress/scripts": "^9.0.0",
+    "babel-loader": "^8.1.0",
     "dir-archiver": "^1.1.1",
     "node-sass": "^4.14.0",
-    "rtlcss": "^2.5.0"
+    "parallelshell": "^3.0.2",
+    "rtlcss": "^2.5.0",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12"
   },
   "rtlcssConfig": {
     "options": {
@@ -37,7 +43,11 @@
     "map": false
   },
   "scripts": {
-    "watch": "node-sass -w scss/ -o css/ --source-map true --output-style compressed",
+    "watch": "parallelshell 'npm run watch:js' 'npm run watch:scss'",
+    "watch:js": "npx webpack --watch",
+    "watch:scss": "node-sass -w src/scss/ -o dist/css/ --source-map true --output-style compressed",
+    "imagemin": "node webp.js",
+    "build:js": "",
     "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
@@ -45,6 +55,7 @@
     "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
   },
   "dependencies": {
+    "basiclightbox": "^5.0.3",
     "imagemin": "^7.0.1",
     "imagemin-webp": "^6.0.0"
   }

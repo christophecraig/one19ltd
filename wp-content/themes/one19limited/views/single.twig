@@ -1,0 +1,37 @@
+<div class="box">
+  <main id="primary" class="site-main single-post">
+    <header class="page-header">
+      <h1 class="single-post-title page-title">
+        {{ post.title }}
+      </h1>
+    </header>
+    <div class="single-post-content">
+      <aside class="single-post-pictures">
+        {% for img in post.pictures.value %}
+          <div class="single-post-picture">
+            <img data-src-full="{{ Image(img).src('full') }}"
+              src="{{ Image(img).src('medium') }}"
+              alt="{{ Image(img).caption }}" />
+          </div>
+        {% endfor %}
+      </aside>
+      <div class="single-post-text">
+        {{ post.content }}
+      </div>
+    </div>
+    <hr class="post-comments-separator" />
+    <div id="post-comments">
+      <h4 class="comments-title">
+        Comments
+      </h4>
+      <ul>
+        {% for comment in post.comments %}
+          {% include 'comment.twig' %}
+        {% endfor %}
+      </ul>
+      <div class="comment-form">
+        {% include 'comment-form.twig' %}
+      </div>
+    </div>
+  </main>
+</div>

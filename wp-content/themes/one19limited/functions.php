@@ -203,7 +203,7 @@ function one19limited_scripts()
     // Custom style generated from /scss/one19.scss
     wp_enqueue_style(
         'one19limited-main-style',
-        get_stylesheet_directory_uri() . '/css/one19.css',
+        get_stylesheet_directory_uri() . '/dist/css/one19.css',
         [],
         _S_VERSION
     );
@@ -211,7 +211,7 @@ function one19limited_scripts()
 
     wp_enqueue_script(
         'one19limited-navigation',
-        get_template_directory_uri() . '/js/navigation.js',
+        get_template_directory_uri() . '/dist/navigation.js',
         [],
         _S_VERSION,
         true
@@ -219,7 +219,15 @@ function one19limited_scripts()
 
     wp_enqueue_script(
         'one19limited-modernizr',
-        get_template_directory_uri() . '/js/modernizr.js',
+        get_template_directory_uri() . '/dist/modernizr.js',
+        [],
+        _S_VERSION,
+        true
+    );
+
+    wp_enqueue_script(
+        'one19limited-lightbox',
+        get_template_directory_uri() . '/dist/main.js',
         [],
         _S_VERSION,
         true

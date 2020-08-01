@@ -13,7 +13,6 @@
 	}
 
 	const button = siteNavigation.parentElement.getElementsByTagName('button')[0];
-	console.log(button)
 
 	// Return early if the button don't exist.
 	if ('undefined' === typeof button) {
@@ -46,7 +45,7 @@
 	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
 	document.addEventListener('click', function (event) {
 		const isClickInside = siteNavigation.contains(event.target) || button.contains(event.target);
-		console.log(isClickInside)
+
 		if (!isClickInside) {
 			siteNavigation.classList.remove('toggled');
 			button.setAttribute('aria-expanded', 'false');

@@ -1,0 +1,19 @@
+<li>
+  <div>
+    {{ comment.content }}
+  </div>
+  <p class="comment-author">
+    {{ comment.author.name }}
+  </p>
+  {{ function('comment_form') }}
+  <!-- nested comments here -->
+  {% if comment.children %}
+    <div class="replies">
+      {% for child_comment in comment.children %}
+        {% include 'comment.twig' with {
+          comment: child_comment
+        } %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</li>

@@ -1,0 +1,34 @@
+.single-post {
+  flex-direction: column;
+  &-content {
+    display: flex;
+    flex-direction: column;
+  }
+  &-pictures {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-picture {
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+    img {
+      cursor: pointer;
+    }
+  }
+}
+
+.comments-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.post-comments-separator {
+  height: 3px;
+  width: 100%;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+}

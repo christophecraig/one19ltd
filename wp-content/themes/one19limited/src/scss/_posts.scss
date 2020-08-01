@@ -1,13 +1,14 @@
+.page-header {
+  width: 100%;
+}
+.page-title {
+  display: inline-block;
+  padding-right: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 4px solid $primary;
+}
+
 .blog {
-  .page-header {
-    width: 100%;
-  }
-  .page-title {
-    display: inline-block;
-    padding-right: 3rem;
-    padding-bottom: 1rem;
-    border-bottom: 4px solid $primary;
-  }
   .post {
     display: flex;
     flex-direction: column;
