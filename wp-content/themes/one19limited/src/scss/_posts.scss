@@ -12,7 +12,7 @@
   .post {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin: 1rem 0;
     overflow: hidden;
     border-radius: 6px;
     background: #e6e6e6;
@@ -26,6 +26,7 @@
     }
   }
 }
+
 .post-header {
   color: $white;
   padding: 20px;
@@ -132,7 +133,8 @@
     flex-wrap: wrap;
   }
   .blog .post {
-    width: calc(50% - 1.5rem);
+    margin: 1rem 0 1rem 2rem;
+    width: calc(50% - 1rem);
     &:nth-child(even) {
       margin-left: 0;
     }

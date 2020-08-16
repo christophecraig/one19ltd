@@ -20,7 +20,14 @@
 }
 
 .love-local {
+  display: none;
   max-width: 150px;
+}
+
+@media (min-width: 768px) {
+  .love-local {
+    display: block;
+  }
 }
 
 #site-navigation {
