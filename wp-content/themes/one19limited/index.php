@@ -12,21 +12,21 @@
  * @package one19limited
  */
 
-use Timber\Post;
+use Timber\PostQuery;
 use Timber\Timber;
 
 get_header();
 
 $context = Timber::context();
-$posts = Timber::get_posts();
+$posts = new PostQuery();
 // Retrieve post-picture group field fields
 foreach ($posts as $post) {
     $post->pictures = !empty(get_field_object('post-pictures')['value'])
         ? get_field_object('post-pictures')['value']
         : [];
 }
+$posts->pagination(3);
 $context['posts'] = $posts;
-$context['pagination'] = Timber::get_pagination();
 Timber::render('blog.twig', $context);
 get_sidebar();
 get_footer();

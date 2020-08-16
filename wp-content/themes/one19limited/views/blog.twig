@@ -34,7 +34,7 @@
     {% endfor %}
     <nav class="pagination-container">
       <ul class="pagination-list">
-        {% for page in pagination.pages %}
+        {% for page in posts.pagination.pages %}
           <li class="pagination-item">
             {% if page.name %}
               <a href="{{ page.link }}"
