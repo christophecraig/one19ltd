@@ -1,4 +1,4 @@
-<div class="box">
+<div class="main-container">
   <main id="primary" class="site-main">
     <header class="page-header">
       <h1 class="page-title">
@@ -11,7 +11,9 @@
           <h2 class="post-title entry-title">
             <a href="{{ post.link }}">{{ post.title }}</a>
           </h2>
-          <time datetime="{{ post.post_date }}">{{ post.date }}</time>
+          <time datetime="{{ post.post_date }}">
+            {{ post.date|date('d/m/yy') }}
+          </time>
         </header>
         <div class="post-main">
           <div class="post-images">
