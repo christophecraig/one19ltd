@@ -20,14 +20,14 @@ $generated_i18n_strings = array(
 	// Reference: js/src/form/calculator.js:27
 	__( 'Display a Calculator Form', 'formidable' ),
 
-	// Reference: js/src/form/calculator.js:52
-	__( 'Calculator Form', 'formidable' ),
-
 	// Reference: js/src/form/calculator.js:55
 	__( 'This site does not have any calculator forms.', 'formidable' ),
 
 	// Reference: js/src/form/calculator.js:58
 	__( 'Upgrade Formidable Forms.', 'formidable' ),
+
+	// Reference: js/src/form/calculator.js:61
+	__( 'Calculator Form', 'formidable' ),
 
 	// Reference: js/src/form/formselect.js:23
 	__( 'form', 'formidable' ),

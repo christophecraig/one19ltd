@@ -36,6 +36,18 @@ class FrmFormsController {
 	}
 
 	/**
+	 * Show a message about conditional logic
+	 *
+	 * @since 4.06.03
+	 */
+	public static function logic_tip() {
+		echo '<a href="javascript:void(0)" class="frm_noallow frm_show_upgrade frm_add_logic_link" data-upgrade="' . esc_attr__( 'Conditional Logic options', 'formidable' ) . '" data-message="' . esc_attr__( 'Only show the fields you need and create branching forms. Upgrade to get conditional logic and question branching.', 'formidable' ) . esc_attr( ' <img src="https://cdn.formidableforms.com/wp-content/themes/fp2015git/images/survey/survey-logic.png" srcset="https://cdn.formidableforms.com/wp-content/themes/fp2015git/images/survey/survey-logic@2x.png 2x" alt="Conditional Logic options"/>' ) . '" data-medium="builder" data-content="logic">';
+		FrmAppHelper::icon_by_class( 'frmfont frm_swap_icon' );
+		esc_html_e( 'Add Conditional Logic', 'formidable' );
+		echo '</a>';
+	}
+
+	/**
 	 * By default, Divi processes form shortcodes on the edit post page.
 	 * Now that won't do.
 	 *
@@ -1374,6 +1386,10 @@ class FrmFormsController {
 			case 'settings':
 			case 'update_settings':
 				return self::$action( $vars );
+			case 'lite-reports':
+				return self::no_reports( $vars );
+			case 'views':
+				return self::no_views( $vars );
 			default:
 				do_action( 'frm_form_action_' . $action );
 				if ( apply_filters( 'frm_form_stop_action_' . $action, false ) ) {
@@ -1408,6 +1424,31 @@ class FrmFormsController {
 	 */
 	public static function add_form_style_tab_options() {
 		include( FrmAppHelper::plugin_path() . '/classes/views/frm-forms/add_form_style_options.php' );
+	}
+
+	/**
+	 * Add education about views.
+	 *
+	 * @since 4.07
+	 */
+	public static function no_views( $values = array() ) {
+		FrmAppHelper::include_svg();
+		$id   = FrmAppHelper::get_param( 'form', '', 'get', 'absint' );
+		$form = $id ? FrmForm::getOne( $id ) : false;
+
+		include FrmAppHelper::plugin_path() . '/classes/views/shared/views-info.php';
+	}
+
+	/**
+	 * Add education about reports.
+	 *
+	 * @since 4.07
+	 */
+	public static function no_reports( $values = array() ) {
+		$id   = FrmAppHelper::get_param( 'form', '', 'get', 'absint' );
+		$form = $id ? FrmForm::getOne( $id ) : false;
+
+		include FrmAppHelper::plugin_path() . '/classes/views/shared/reports-info.php';
 	}
 
 	/* FRONT-END FORMS */
@@ -1547,9 +1588,7 @@ class FrmFormsController {
 		if ( self::is_viewable_draft_form( $form ) ) {
 			// don't show a draft form on a page
 			$form = __( 'Please select a valid form', 'formidable' );
-		} elseif ( self::user_should_login( $form ) ) {
-			$form = do_shortcode( $frm_settings->login_msg );
-		} elseif ( self::user_has_permission_to_view( $form ) ) {
+		} elseif ( ! FrmForm::is_visible_to_user( $form ) ) {
 			$form = do_shortcode( $frm_settings->login_msg );
 		} else {
 			do_action( 'frm_pre_get_form', $form );
@@ -1582,14 +1621,6 @@ class FrmFormsController {
 
 	private static function is_viewable_draft_form( $form ) {
 		return $form->status == 'draft' && current_user_can( 'frm_edit_forms' ) && ! FrmAppHelper::is_preview_page();
-	}
-
-	private static function user_should_login( $form ) {
-		return $form->logged_in && ! is_user_logged_in();
-	}
-
-	private static function user_has_permission_to_view( $form ) {
-		return $form->logged_in && get_current_user_id() && isset( $form->options['logged_in_role'] ) && $form->options['logged_in_role'] != '' && ! FrmAppHelper::user_has_permission( $form->options['logged_in_role'] );
 	}
 
 	public static function get_form( $form, $title, $description, $atts = array() ) {
@@ -1876,14 +1907,19 @@ class FrmFormsController {
 	}
 
 	/**
-	 * @return string - 'before' or 'after'
+	 * @return string - 'before', 'after', or 'submit'
 	 *
 	 * @since 4.05.02
 	 */
 	private static function message_placement( $form, $message ) {
 		$place = 'before';
-		if ( ! empty( $message ) && isset( $form->options['form_class'] ) && strpos( $form->options['form_class'], 'frm_below_success' ) !== false ) {
-			$place = 'after';
+
+		if ( $message && isset( $form->options['form_class'] ) ) {
+			if ( strpos( $form->options['form_class'], 'frm_below_success' ) !== false ) {
+				$place = 'after';
+			} elseif ( strpos( $form->options['form_class'], 'frm_inline_success' ) !== false ) {
+				$place = 'submit';
+			}
 		}
 
 		/**

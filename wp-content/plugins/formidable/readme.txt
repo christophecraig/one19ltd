@@ -3,9 +3,9 @@ Plugin Name: Formidable Forms - Contact Form, Survey & Quiz Forms Plugin for Wor
 Contributors: formidableforms, sswells, srwells
 Tags: forms, contact form, form builder, survey, form maker, form creator, paypal form, registration form, paypal, paypal form, stripe, stripe form, aweber, aweber form, getresponse, getresponse form, calculator form, calculator, price calculator, quote form, contact button, contact me, form manager, forms creator, Akismet, web form, payment form, survey form, donation form, email submit form, message form, email subscription, contact form widget, user registration form, wordpress registration, wordpress login form, constant contact, mailpoet, active campaign, salesforce, hubspot, campaign monitor
 Requires at least: 4.7
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 4.06.01
+Stable tag: 4.07
 
 The most advanced WordPress forms plugin. Go beyond contact forms with our drag & drop form builder for surveys, quiz forms, and more.
 
@@ -436,26 +436,22 @@ Using our Zapier integration, you can easily connect Formidable with over 1000+ 
 See all <a href="https://zapier.com/apps/formidable/integrations">Formidable Zapier Integrations</a>.
 
 == Changelog ==
-= 4.06.01 =
-* Remove the top level nav notification for inbox notifications.
-* Use the frm_display_value hook for each different case where values are displayed (entries list table, view an entry, summary field...)
-* Fix: Left and right margin setting on buttons was being ignored. Use something like "10px 10px" in the button margin setting to show margins on the sides.
-* Fix: Prevent a js error in some cases when the ajax response isn't json.
+= 4.07 =
+* New: Use frm_inline_success for the form class in the customized HTML to move the success message next to the submit button. "frm_inline_success frm_alignright_success" will right-align the message.
+* Tweak: Improve the form listing page and entry listings page when nothing has been created.
+* Fix: Update the recaptcha for better reliability to catch more spam.
 
-= 4.06 =
-* New: Better accessibility for honeypot field and message after submit.
-* New: Add a Dismiss all button in the inbox.
-* New: Add 'frm_user_id_display' hook for showing something other than the dispay name by default in user ID fields.
-* Set the default styling to use grids since most browsers support it now.
-* Fix: On some sites, permissions were preventing a form from being created from a template.
-* Fix: The button colors were overriding eachother with some settings.
+= 4.06.03 =
+* More consistent dropdown styling with multiselect dropdowns.
+* Prepare the code for handling permissions options as an array of roles.
+* Fix: WP 5.5 - Email subject lines were coming through encoded.
+* Fix: WP 5.5 - When WP Mail SMTP was installed, the Formidable SMTP page has an error.
 
-= 4.05.02 =
-* New: Added frm_message_placement hook to show the form message below the form
-* New: New classes that can be used in the 'form class' setting: frm_plain_success (Removes styling from the success message) and frm_below_success (Movs the success message below the form).
-* Add Formidable back to the admin bar. This is now a setting if the default WordPress v5.2+ behavior is desired.
-* Fix: Reiew requests were added to the inbox too frequently with sites with multiple admins.
-* Fix: Elementor conflict by using the glost $post in the admin area.
-* Fix: The color picker position in the styling settings was off for some options.
+= 4.06.02 =
+* New: Added frm_field_value_object hook for making adjustments to the field before it's label and value is displayed.
+* New: Added frm_xml_response hook for altering the message/response when an XML file is imported.
+* Fix: Updated deprecated blacklist functions in WP 5.5.
+* Fix: Add more checks to the installation triggers to prevent them from being triggered at unintended times.
+* Show a more helpful error message in some cases when the XML import fails.
 
 <a href="https://raw.githubusercontent.com/Strategy11/formidable-forms/master/changelog.txt">See changelog for all versions</a>

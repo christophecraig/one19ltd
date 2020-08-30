@@ -83,6 +83,7 @@ class FrmAppController {
 		$white_pages = array(
 			'formidable',
 			'formidable-entries',
+			'formidable-views',
 			'formidable-pro-upgrade',
 			'formidable-addons',
 			'formidable-import',
@@ -167,27 +168,23 @@ class FrmAppController {
 		// Let people know reports and views exist.
 		if ( ! FrmAppHelper::pro_is_installed() ) {
 			$nav_items[] = array(
-				'link'    => '',
+				'link'    => admin_url( 'admin.php?page=formidable-views&frm-full=1&form=' . absint( $id ) ),
 				'label'   => __( 'Views', 'formidable' ),
 				'current' => array(),
-				'page'    => '',
+				'page'    => 'formidable-views',
 				'permission' => 'frm_view_entries',
 				'atts'    => array(
-					'class'        => 'frm_show_upgrade frm_noallow',
-					'data-upgrade' => __( 'Views', 'formidable' ),
-					'data-medium'  => 'views-nav',
+					'class' => 'frm_noallow',
 				),
 			);
 			$nav_items[] = array(
-				'link'    => '',
+				'link'    => admin_url( 'admin.php?page=formidable&frm_action=lite-reports&frm-full=1&form=' . absint( $id ) ),
 				'label'   => __( 'Reports', 'formidable' ),
-				'current' => array(),
-				'page'    => '',
+				'current' => array( 'reports' ),
+				'page'    => 'formidable',
 				'permission' => 'frm_view_entries',
 				'atts'    => array(
-					'class'        => 'frm_show_upgrade frm_noallow',
-					'data-upgrade' => __( 'Reports', 'formidable' ),
-					'data-medium'  => 'reports-nav',
+					'class' => 'frm_noallow',
 				),
 			);
 		}
@@ -280,6 +277,7 @@ class FrmAppController {
 		remove_action( 'frm_before_settings', 'FrmSettingsController::license_box' );
 		remove_action( 'frm_after_settings', 'FrmSettingsController::settings_cta' );
 		remove_action( 'frm_add_form_style_tab_options', 'FrmFormsController::add_form_style_tab_options' );
+		remove_action( 'frm_after_field_options', 'FrmFormsController::logic_tip' );
 	}
 
 	/**
@@ -456,8 +454,20 @@ class FrmAppController {
 		$args = array(
 			'methods'  => 'GET',
 			'callback' => 'FrmAppController::api_install',
+			'permission_callback' => __CLASS__ . '::can_update_db',
 		);
+
 		register_rest_route( 'frm-admin/v1', '/install', $args );
+	}
+
+	/**
+	 * Make sure the install is only being run when we tell it to.
+	 * We don't want to run manually by people calling the API.
+	 *
+	 * @since 4.06.02
+	 */
+	public static function can_update_db() {
+		return get_transient( 'frm_updating_api' );
 	}
 
 	/**
@@ -469,7 +479,8 @@ class FrmAppController {
 	 * @param int $blog_id Blog ID.
 	 */
 	public static function network_upgrade_site( $blog_id = 0 ) {
-
+		// Flag to check if install is happening as intended.
+		set_transient( 'frm_updating_api', true, MINUTE_IN_SECONDS );
 		$request = new WP_REST_Request( 'GET', '/frm-admin/v1/install' );
 
 		if ( $blog_id ) {
@@ -490,6 +501,7 @@ class FrmAppController {
 	 * @since 3.0
 	 */
 	public static function api_install() {
+		delete_transient( 'frm_updating_api' );
 		if ( self::needs_update() ) {
 			$running = get_option( 'frm_install_running' );
 			if ( false === $running || $running < strtotime( '-5 minutes' ) ) {
