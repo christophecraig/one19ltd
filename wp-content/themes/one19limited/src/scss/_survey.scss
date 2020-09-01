@@ -9,7 +9,29 @@
 }
 
 .frm_primary_label {
+  display: block;
   color: $white;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.frm_form_fields {
+  fieldset {
+    padding: 0;
+    border: 0;
+  }
+  select {
+    padding: 5px;
+  }
+}
+
+.frm_form_field {
+  margin: 20px 0;
+}
+
+.frm_checkbox {
+  margin: 8px 0;
 }
 
 .frm_message {

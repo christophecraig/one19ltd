@@ -1,17 +1,17 @@
-@import './variables';
-@import './fonts';
-@import './reset';
-@import './utilities';
-@import '../../node_modules/basiclightbox/src/styles/main.scss';
-@import './header';
-@import './footer';
-@import './page_default';
-@import './posts';
-@import './post';
-@import './survey';
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import "./variables";
+@import "./fonts";
+@import "./reset";
+@import "./utilities";
+@import "../../node_modules/basiclightbox/src/styles/main.scss";
+@import "./header";
+@import "./footer";
+@import "./page_default";
+@import "./posts";
+@import "./post";
+@import "./survey";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 
 .banner-important {
   background: $important-bg;
@@ -62,11 +62,11 @@
 }
 
 .webp .clothing {
-  background-image: url($base-url + '/images/shallow-focus-photography-of-clothes-994517.webp');
+  background-image: url($base-url+"/images/shallow-focus-photography-of-clothes-994517.webp");
 }
 
 .no-webp .clothing {
-  background-image: url($base-url + 'images/shallow-focus-photography-of-clothes-994517.jpg');
+  background-image: url($base-url+"images/shallow-focus-photography-of-clothes-994517.jpg");
 }
 
 @media (min-width: 768px) {
@@ -77,11 +77,11 @@
 }
 
 .webp .nzta {
-  background-image: url($base-url + 'images/trees-by-the-road-3396673.webp');
+  background-image: url($base-url+"images/trees-by-the-road-3396673.webp");
 }
 
 .no-webp .nzta {
-  background-image: url($base-url + 'images/trees-by-the-road-3396673.jpg');
+  background-image: url($base-url+"images/trees-by-the-road-3396673.jpg");
 }
 
 .dry-cleaning {
@@ -90,17 +90,27 @@
 
 .computer {
   flex-shrink: 0;
-  background-image: url($base-url + 'images/black-and-white-hard-disk-drive-2582931.jpg');
+  background-image: url($base-url+"images/black-and-white-hard-disk-drive-2582931.jpg");
   background-position-x: center;
 }
 
-.brands {
-  display: flex;
-  justify-content: space-between;
+.home {
+  .brands {
+    display: flex;
+    justify-content: space-between;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+  }
 }
+
 .brand {
   display: flex;
-  align-items: center;
+}
+
+.brand-title {
+  display: none;
 }
 
 .page-template-default {
