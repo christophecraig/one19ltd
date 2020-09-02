@@ -11,13 +11,14 @@
 .frm_primary_label {
   display: block;
   color: $white;
-  font-weight: 600;
-  font-size: 2.125rem;
+  font-weight: 700;
+  font-size: 2.25rem;
   margin-bottom: 12px;
 }
 
 .frm_form_fields {
   // Reset
+  font-size: 1.375rem;
   fieldset {
     padding: 0;
     display: block;
