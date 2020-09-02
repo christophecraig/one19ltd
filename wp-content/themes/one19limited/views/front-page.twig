@@ -1,4 +1,16 @@
 {{ function('get_header') }}
+{% if important.title %}
+  <div class="banner-important">
+    <h3>
+      {{ important.title }}
+    </h3>
+    <div class="button-wrapper">
+      <a class="button button-cta important" href="{{ important.url }}">
+        {{ important.text }}
+      </a>
+    </div>
+  </div>
+{% endif %}
 <div class="container">
   {% if nzta.title %}
     <section class="section nzta">
@@ -48,19 +60,4 @@
     </section>
   {% endif %}
 </div>
-{% if important.title %}
-  {# <div class="banner-important">
-    <h3>
-      {{ important.title }}
-    </h3>
-    <p>
-      {{ important.text }}
-    </p>
-    <div class="button-wrapper">
-      <a class="button button-cta important" href="{{ important.url }}">
-        Get 10% off
-      </a>
-    </div>
-  </div> #}
-{% endif %}
 {{ function('get_footer') }}
