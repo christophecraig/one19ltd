@@ -1,5 +1,5 @@
 .env.local
 wp-content/themes/one19limited/node_modules
 wp-content/themes/one19limited/vendor
-vendor/
+/vendor/
 wp-content/uploads/
