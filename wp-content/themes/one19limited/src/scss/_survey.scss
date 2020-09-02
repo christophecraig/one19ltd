@@ -17,6 +17,7 @@
 }
 
 .frm_form_fields {
+  // Reset
   fieldset {
     padding: 0;
     display: block;
@@ -44,6 +45,10 @@
 
 .frm_checkbox {
   margin: 8px 0;
+}
+
+.frm_radio {
+    margin: 8px 0;
 }
 
 .frm_message {
