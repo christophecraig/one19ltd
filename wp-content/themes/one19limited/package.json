@@ -23,7 +23,7 @@
     "@wordpress/scripts": "^9.0.0",
     "babel-loader": "^8.1.0",
     "dir-archiver": "^1.1.1",
-    "node-sass": "^4.14.0",
+    "node-sass": "^7.0.0",
     "parallelshell": "^3.0.2",
     "rtlcss": "^2.5.0",
     "webpack": "^4.44.0",
